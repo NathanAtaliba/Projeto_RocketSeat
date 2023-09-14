@@ -5,7 +5,7 @@ import { server } from './server.js';
 
 form.addEventListener("submit", async (event)=>{
     event.preventDefault();
-    console.log("dados enviados!");
+    content.classList.add('placeholder');
 
     const videoURL = input.value;
 
@@ -25,4 +25,5 @@ form.addEventListener("submit", async (event)=>{
         text: transcription.data.result,
     })
     content.textContent = summary.data.result;
+    content.classList.remove('placeholder');
 })
